@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Mettez ici vos balises meta, titre et liens vers les feuilles de style -->
+</head>
+<body class="container mt-5">
+
+<h2>Update Order</h2>
+
+<form method="post" th:object="${orderToUpdate}">
+    <!-- Ajoutez un champ caché pour l'ID -->
+    <input type="hidden" id="id" th:field="*{id}" />
+
+    <div class="mb-3">
+        <label>SkuCode</label><br>
+        <input type="radio" id="shea_butter" name="skuCode" value="Shea_butter" th:checked="${orderToUpdate.skuCode == 'Shea_butter'}" th:field="*{skuCode}"  required>
+        <label for="shea_butter">Shea_butter</label>
+
+        <input type="radio" id="logo" name="skuCode" value="Logo" th:checked="${orderToUpdate.skuCode == 'Logo'}" th:field="*{skuCode}" required>
+        <label for="logo">Logo</label>
+
+        <input type="radio" id="flyer" name="skuCode" value="Flyer" th:checked="${orderToUpdate.skuCode == 'Flyer'}" th:field="*{skuCode}" required>
+        <label for="flyer">Flyer</label>
+
+        <input type="radio" id="web_site" name="skuCode" value="Web_Site" th:checked="${orderToUpdate.skuCode == 'Web_Site'}" th:field="*{skuCode}" required>
+        <label for="web_site">Web_site</label>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="text" class="form-control" id="price" name="price" th:value="${orderToUpdate.price}" >
+    </div>
+
+    <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="text" class="form-control" id="quantity" name="quantity" th:value="${orderToUpdate.quantity}" >
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a th:href="@{'/api/order/display'}" class="btn btn-secondary">Cancel</a>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Inclure le fichier CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+</head>
+<body class="container mt-5">
+
+<h2>Commentaire List</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Contenu</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="commentaire : ${commentaires}">
+        <td th:text="${commentaire.id}"></td>
+        <td th:text="${commentaire.titre}"></td>
+        <td th:text="${commentaire.contenu}"></td>
+        <td th:text="${commentaire.date}"></td>
+        <td>
+            <a th:href="@{'/api/commentaire/edit/' + ${commentaire.id}}" class="btn-primary">Edit</a>
+            <a th:href="@{'/api/commentaire/delete/' + ${commentaire.id}}" class="btn btn-danger btn-sm">Delete</a>
+
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<a th:href="@{'/api/commentaire/add'}" class="btn btn-danger btn-sm">Add</a>
+</body>
+</html>

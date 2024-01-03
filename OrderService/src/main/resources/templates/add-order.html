@@ -1,0 +1,33 @@
+
+<form action="/api/order/add" method="post">
+    <div class="mb-3">
+        <label class="form-label">SkuCode</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="skuCode" id="shea_butter" value="Shea_butter">
+            <label class="form-check-label" for="shea_butter">Shea_butter</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="skuCode" id="logo" value="Logo">
+            <label class="form-check-label" for="logo">Logo</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="skuCode" id="flyer" value="Flyer">
+            <label class="form-check-label" for="flyer">Flyer</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="skuCode" id="web_site" value="Web_Site" checked>
+            <label class="form-check-label" for="web_site">User</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="text" class="form-control" id="price" name="price">
+    </div>
+
+    <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="text" class="form-control" id="quantity" name="quantity">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Order</button>
+</form>

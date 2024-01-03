@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Mettez ici vos balises meta, titre et liens vers les feuilles de style -->
+</head>
+<body class="container mt-5">
+
+<h2>Update User</h2>
+
+<form method="post" th:object="${userToUpdate}">
+  <!-- Ajoutez un champ caché pour l'ID -->
+  <input type="hidden" id="id" th:field="*{id}" />
+
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username" name="username" th:value="${userToUpdate.username}" >
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" th:value="${userToUpdate.email}" >
+  </div>
+
+
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" th:value="${userToUpdate.password}" >
+  </div>
+
+  <div class="mb-3">
+    <label>Role</label><br>
+    <input type="radio" id="admin" name="userRole" value="ADMIN" th:checked="${userToUpdate.userRole == 'ADMIN'}" th:field="*{userRole}"  required>
+    <label for="admin">Admin</label>
+
+    <input type="radio" id="guest" name="userRole" value="GUEST" th:checked="${userToUpdate.userRole == 'GUEST'}" th:field="*{userRole}" required>
+    <label for="guest">Guest</label>
+
+    <input type="radio" id="user" name="userRole" value="USER" th:checked="${userToUpdate.userRole == 'USER'}" th:field="*{userRole}" required>
+    <label for="user">User</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+  <a th:href="@{'/api/user/display'}" class="btn btn-secondary">Cancel</a>
+</form>
+
+</body>
+</html>

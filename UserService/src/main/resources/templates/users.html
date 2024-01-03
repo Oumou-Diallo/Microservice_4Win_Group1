@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Inclure le fichier CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+</head>
+<body class="container mt-5">
+
+<h2>User List</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>User Role</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.userRole}"></td>
+        <td>
+            <a th:href="@{'/api/user/edit/' + ${user.id}}" class="btn-primary">Edit</a>
+            <a th:href="@{'/api/user/delete/' + ${user.id}}" class="btn btn-danger btn-sm">Delete</a>
+
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<a th:href="@{'/api/user/add'}" class="btn btn-danger btn-sm">Add</a>
+</body>
+</html>

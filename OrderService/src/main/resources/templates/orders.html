@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Inclure le fichier CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+</head>
+<body class="container mt-5">
+
+<h2>Order List</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>SkuCode</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.id}"></td>
+        <td th:text="${order.skuCode}"></td>
+        <td th:text="${order.price}"></td>
+        <td th:text="${order.quantity}"></td>
+        <td>
+            <a th:href="@{'/api/order/edit/' + ${order.id}}" class="btn-primary">Edit</a>
+            <a th:href="@{'/api/order/delete/' + ${order.id}}" class="btn btn-danger btn-sm">Delete</a>
+
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<a th:href="@{'/api/order/add'}" class="btn btn-danger btn-sm">Add</a>
+</body>
+</html>

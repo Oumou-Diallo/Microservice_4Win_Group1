@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Mettez ici vos balises meta, titre et liens vers les feuilles de style -->
+</head>
+<body class="container mt-5">
+
+<h2>Update Comment</h2>
+
+<form method="post" th:object="${commentToUpdate}">
+    <!-- Ajoutez un champ caché pour l'ID -->
+    <input type="hidden" id="id" th:field="*{id}" />
+
+    <div class="mb-3">
+        <label for="titre" class="form-label">Titre</label>
+        <input type="text" class="form-control" id="titre" name="titre" th:value="${commentToUpdate.titre}" >
+    </div>
+
+    <div class="mb-3">
+        <label for="contenu" class="form-label">Contenu</label>
+        <input type="contenu" class="form-control" id="contenu" name="contenu" th:value="${commentToUpdate.contenu}" >
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a th:href="@{'/api/commentaire/display'}" class="btn btn-secondary">Cancel</a>
+</form>
+
+</body>
+</html>
