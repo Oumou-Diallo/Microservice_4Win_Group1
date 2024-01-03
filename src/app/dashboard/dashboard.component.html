@@ -1,0 +1,196 @@
+<div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+   <!-- [ Header Topbar ] start -->
+  <header class="pc-header">
+    <div class="m-header">
+      <a href="index.html" class="b-brand">
+        <!-- ========   change your logo hear   ============ -->
+        <img src="../assets/images/logo-dark.svg" alt="" class="logo logo-lg" />
+      </a>
+      <!-- ======= Menu collapse Icon ===== -->
+      <!-- <div class="pc-h-item">
+        <a [routerLink]="['/dashboard']"class="pc-head-link head-link-secondary m-0" id="sidebar-hide">
+          <i class="ti ti-menu-2"></i>
+        </a>
+      </div> -->
+    </div>
+    <div class="header-wrapper"> <!-- [Mobile Media Block] start -->
+       
+  <!-- [Mobile Media Block end] -->
+  <div class="ms-auto">
+    <ul class="list-unstyled">
+      
+      <li class="dropdown pc-h-item header-user-profile">
+        <a class="pc-head-link head-link-primary dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#"
+          role="button" aria-haspopup="false" aria-expanded="false">
+          <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar" />
+          <span>
+            <i class="ti ti-settings"></i>
+          </span>
+        </a>
+        <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
+          <div class="dropdown-header">
+            <h4>Good Morning, <span class="small text-muted"> John Doe</span></h4>
+            <p class="text-muted">Project Admin</p>
+            
+            <hr />
+            <div class="profile-notification-scroll position-relative" style="max-height: calc(100vh - 280px)">
+              
+              <hr />
+              
+              <hr />
+              <a href="#" class="dropdown-item">
+                <i class="ti ti-settings"></i>
+                <span>Account Settings</span>
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="ti ti-user"></i>
+                <span>Social Profile</span>
+              </a>
+              <a href="../pages/login-v3.html" class="dropdown-item">
+                <i class="ti ti-logout"></i>
+                <span>Logout</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div> </div>
+</header>
+  <!-- [ Header ] end -->
+   <!-- [ Sidebar Menu ] start -->
+  <nav class="pc-sidebar">
+    <div class="navbar-wrapper">
+      <div class="m-header">
+        <a href="index.html" class="b-brand">
+          <!-- ========   Change your logo from here   ============ -->
+          <img src="../assets/images/logo-dark.svg" alt="" class="logo logo-lg" />
+        </a>
+      </div>
+      <div class="navbar-content">
+        <ul class="pc-navbar">
+          <li class="pc-item pc-caption">
+            <label>Dashboard</label>
+            <i class="ti ti-dashboard"></i>
+          </li>
+          <li class="pc-item">
+            <a href="../dashboard/index.html" class="pc-link"><span class="pc-micon"><i class="ti ti-dashboard"></i></span><span
+                class="pc-mtext">Dashboard</span></a>
+          </li>
+          <li class="pc-item pc-caption">
+            <label>Pages</label>
+            <i class="ti ti-news"></i>
+          </li>
+          <li class="pc-item pc-hasmenu">
+            <a [routerLink]="['/dashboard/foyer/listFoyer']"class="pc-link"><span class="pc-micon"><i class="ti ti-building-community"></i></span><span
+                class="pc-mtext">Foyer</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
+            <ul class="pc-submenu">
+                <li> <a class="pc-link" [routerLink]="['/dashboard/foyer/listFoyer']">Liste des foyers</a></li>
+                 <li> <a class="pc-item" class="pc-link"  [routerLink]="['/dashboard/foyer/addFoyer']">Ajouter un foyer</a></li>
+                 <li> <a  class="pc-link"  [routerLink]="['/dashboard/foyer/scene']">Simulation 3D du foyer</a></li>
+              
+            </ul>
+          </li>
+
+          <li class="pc-item pc-hasmenu">
+            <a [routerLink]="['/dashboard/bloc/listBloc']"class="pc-link"><span class="pc-micon"><i class="ti ti-building-arch"></i></span><span
+                class="pc-mtext">Bloc</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
+            <ul class="pc-submenu">
+                <li> <a class="pc-link" [routerLink]="['/dashboard/bloc/listBloc']">Liste des Blocs</a></li>
+                 <li> <a class="pc-item" class="pc-link"  [routerLink]="['/dashboard/bloc/addBloc']">Ajouter un Bloc</a></li>
+            
+              
+            </ul>
+          </li>
+          <li class="pc-item pc-hasmenu">
+            <a [routerLink]="['/dashboard/user/listeUser']"class="pc-link"><span class="pc-micon"><i class="ti ti-key"></i></span><span
+                class="pc-mtext">User</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
+            <ul class="pc-submenu">
+                <li> <a class="pc-link" [routerLink]="['/dashboard/user/listeUser']">Liste des Users</a></li>
+                 <li> <a class="pc-item" class="pc-link"  [routerLink]="['/dashboard/user/addUser']">Ajouter une User</a></li>             
+            </ul>
+          </li>
+          <li class="pc-item pc-hasmenu">
+            <a [routerLink]="['/dashboard/foyer/listFoyer']"class="pc-link"><span class="pc-micon"><i class="ti ti-square-check"></i></span><span
+                class="pc-mtext">Reservation</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
+            <ul class="pc-submenu">
+                <li> <a class="pc-link" [routerLink]="['/dashboard/foyer/listFoyer']">Liste des foyers</a></li>
+                 <li> <a class="pc-item" class="pc-link"  [routerLink]="['/dashboard/foyer/addFoyer']">Ajouter un foyer</a></li>
+                 <li> <a  class="pc-link"  [routerLink]="['/dashboard/foyer/scene']">Simulation 3D du foyer</a></li>
+              
+            </ul>
+          </li>
+          <li class="pc-item pc-hasmenu">
+            <a [routerLink]="['/dashboard/foyer/listFoyer']"class="pc-link"><span class="pc-micon"><i class="ti ti-message-dots"></i></span><span
+                class="pc-mtext">Forum</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
+            <ul class="pc-submenu">
+                <li> <a class="pc-link" [routerLink]="['/dashboard/foyer/listFoyer']">Liste des foyers</a></li>
+                 <li> <a class="pc-item" class="pc-link"  [routerLink]="['/dashboard/foyer/addFoyer']">Ajouter un foyer</a></li>
+                 <li> <a  class="pc-link"  [routerLink]="['/dashboard/foyer/scene']">Simulation 3D du foyer</a></li>
+              
+            </ul>
+          </li>
+          <li class="pc-item pc-hasmenu">
+            <a [routerLink]="['/dashboard/foyer/listFoyer']"class="pc-link"><span class="pc-micon"><i class="ti ti-tools-kitchen-2"></i></span><span
+                class="pc-mtext">Menu/plat</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
+            <ul class="pc-submenu">
+                <li> <a class="pc-link" [routerLink]="['/dashboard/foyer/listFoyer']">Liste des foyers</a></li>
+                 <li> <a class="pc-item" class="pc-link"  [routerLink]="['/dashboard/foyer/addFoyer']">Ajouter un foyer</a></li>
+                 <li> <a  class="pc-link"  [routerLink]="['/dashboard/foyer/scene']">Simulation 3D du foyer</a></li>
+              
+            </ul>
+          </li>
+          <li class="pc-item pc-hasmenu">
+            <a [routerLink]="['/dashboard/foyer/listFoyer']"class="pc-link"><span class="pc-micon"><i class="ti ti-coffee"></i></span><span
+                class="pc-mtext">Produit</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
+            <ul class="pc-submenu">
+                <li> <a class="pc-link" [routerLink]="['/dashboard/foyer/listFoyer']">Liste des foyers</a></li>
+                 <li> <a class="pc-item" class="pc-link"  [routerLink]="['/dashboard/foyer/addFoyer']">Ajouter un foyer</a></li>
+                 <li> <a  class="pc-link"  [routerLink]="['/dashboard/foyer/scene']">Simulation 3D du foyer</a></li>
+              
+            </ul>
+          </li>
+          <li class="pc-item pc-hasmenu">
+            <a [routerLink]="['/dashboard/foyer/listFoyer']"class="pc-link"><span class="pc-micon"><i class="ti ti-walk"></i></span><span
+                class="pc-mtext">Etudiant</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span></a>
+            <ul class="pc-submenu">
+                <li> <a class="pc-link" [routerLink]="['/dashboard/foyer/listFoyer']">Liste des foyers</a></li>
+                 <li> <a class="pc-item" class="pc-link"  [routerLink]="['/dashboard/foyer/addFoyer']">Ajouter un foyer</a></li>
+                 <li> <a  class="pc-link"  [routerLink]="['/dashboard/foyer/scene']">Simulation 3D du foyer</a></li>
+              
+            </ul>
+          </li>
+         
+  
+         
+  
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+  <!-- [ Sidebar Menu ] end -->
+  
+  
+  
+      <!-- [ Main Content ] start -->
+      <div class="pc-container">
+        <div class="pc-content">
+          <!-- [ Main Content ] start -->
+          <div class="row">
+            <!-- [ sample-page ] start -->
+          
+            <router-outlet></router-outlet>
+           
+            <!-- [ sample-page ] end -->
+          </div>
+          <!-- [ Main Content ] end -->
+        </div>
+      </div>
+    
+    
